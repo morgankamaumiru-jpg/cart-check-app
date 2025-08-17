@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Trash2, Plus, ShoppingCart } from "lucide-react";
+import { Trash2, Plus, ShoppingCart, ArrowLeft } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 
 export interface ShoppingItem {
   id: string;
@@ -75,6 +76,15 @@ export default function ShoppingList() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-secondary/30 p-4">
       <div className="max-w-2xl mx-auto">
+        {/* Navigation */}
+        <div className="mb-6">
+          <Link to="/">
+            <Button variant="outline" className="border-muted hover:bg-secondary/50">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Portfolio
+            </Button>
+          </Link>
+        </div>
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-3 mb-4">
